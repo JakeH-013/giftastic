@@ -1,5 +1,5 @@
 var lotr = ["Aragorn", "Frodo Baggins", "Bilbo Baggins",
-    "Gimli", "Theoden", "Gandalf", "Sauron", "Rohan", "Eomer"];
+    "Boromir", "Theoden", "Gandalf", "Sauron", "Rohan", "Eomer"];
 
 //function to generate buttons
 function makeBtns() {
@@ -15,4 +15,16 @@ function makeBtns() {
         $("#btn-section").append(b);
     }
 }
+
+$("#name-add").on("click", function(event) {
+    //prevents default form action
+    event.preventDefault();
+    //grabs input box text
+    var name = $("#name-input").val().trim();
+    //pushes text into array
+    lotr.push(name);
+
+    makeBtns();
+})
+
 makeBtns();
