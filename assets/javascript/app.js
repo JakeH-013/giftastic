@@ -1,5 +1,5 @@
 var lotr = ["Aragorn", "Frodo Baggins", "Bilbo Baggins",
-    "Boromir", "Theoden", "Gandalf", "Sauron", "Rohan", "Eomer"];
+    "Boromir", "Theoden", "Gandalf", "Sauron", "Eomer"];
 
 function produceGifs() {
     //variable referencing the clicked button
@@ -34,24 +34,27 @@ function produceGifs() {
                     .attr("data-still", results[i].images.original_still.url)
                     .attr("data-animate", results[i].images.original.url);
                 console.log(lotrImg)
+
                 //appends rating and gif to the gifDiv div
                 gifDiv.append(r);
                 gifDiv.append(lotrImg);
+
                 //prepends gifDiv to html
                 $("#gif-section").prepend(gifDiv);
 
-                $(".gif").on("click", function () {
-                    var state = $(this).attr("data-state");
-                
-                    if (state === "still") {
-                        $(this).attr("src", $(this).attr("data-animate"));
-                        $(this).attr("data-state", "animate");
-                    } else {
-                        $(this).attr("src", $(this).attr("data-still"));
-                        $(this).attr("data-state", "still");
-                    }
-                });
+
             }
+            $(".gif").on("click", function () {
+                var state = $(this).attr("data-state");
+            
+                if (state === "still") {
+                    $(this).attr("src", $(this).attr("data-animate"));
+                    $(this).attr("data-state", "animate");
+                } else {
+                    $(this).attr("src", $(this).attr("data-still"));
+                    $(this).attr("data-state", "still");
+                }
+            });
         })
 
 }
