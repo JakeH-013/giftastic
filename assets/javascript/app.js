@@ -2,12 +2,42 @@ var lotr = ["Aragorn", "Frodo Baggins", "Bilbo Baggins",
     "Boromir", "Theoden", "Gandalf", "Sauron", "Rohan", "Eomer"];
 
 function produceGifs() {
+    //variable referencing the clicked button
     var lotrName = $(this).attr("data-name");
-    console.log(lotrName);
+    //forms giffy url for the name/word clicked
     var queryUrl = "https://api.giphy.com/v1/gifs/search?q=" +
     lotrName + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
-    console.log(queryUrl);
+
+    //performs ajax GET request
+    $.ajax({
+        url: queryUrl,
+        method: "GET"
+      })
+      //triggers function after the data comes from the API
+      .then(function(response) {
+        //stores an array of the results in a variable
+        var results = response.data;
+        //for loop for each result item
+        for (var i = 0; i < results.length; i++) {
+            //div for the gif
+            var gifDiv = $("<div>");
+            //varaible containing the gif rating
+            var rating = results[i].rating;
+            //creates paragraph for the rating
+            var r = $("<p>").text("Rating: " + rating);
+            //image tag with a source pulled from the result
+            var lotrImg = $("<img>")
+                .attr("src", results[i].images.fixed_height.url);
+            //appends rating and gif to the gifDiv div
+            gifDiv.append(r);
+            gifDiv.append(lotrImg);
+            //prepends gifDiv to html
+            $("#gif-section").prepend(gifDiv);
+        }
+      })
+
 }
+
 
 
 
