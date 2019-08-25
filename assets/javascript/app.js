@@ -15,6 +15,7 @@ function produceGifs() {
       })
       //triggers function after the data comes from the API
       .then(function(response) {
+          console.log(response)
         //stores an array of the results in a variable
         var results = response.data;
         //for loop for each result item
@@ -27,7 +28,8 @@ function produceGifs() {
             var r = $("<p>").text("Rating: " + rating);
             //image tag with a source pulled from the result
             var lotrImg = $("<img>")
-                .attr("src", results[i].images.fixed_height.url);
+                .addClass("gif")
+                .attr("src", results[i].images.fixed_height_still.url);
             //appends rating and gif to the gifDiv div
             gifDiv.append(r);
             gifDiv.append(lotrImg);
@@ -38,7 +40,10 @@ function produceGifs() {
 
 }
 
+// $(".gif").on("click", function() {
 
+
+// })
 
 
 //function to generate buttons
