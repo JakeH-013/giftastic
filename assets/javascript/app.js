@@ -29,10 +29,10 @@ function produceGifs() {
                 //image tag with a source pulled from the result
                 var lotrImg = $("<img>")
                     .addClass("gif")
-                    .attr("src", results[i].images.original_still.url)
+                    .attr("src", results[i].images.fixed_height_still.url)
                     .attr("data-state", "still")
-                    .attr("data-still", results[i].images.original_still.url)
-                    .attr("data-animate", results[i].images.original.url);
+                    .attr("data-still", results[i].images.fixed_height_still.url)
+                    .attr("data-animate", results[i].images.fixed_height.url);
                 console.log(lotrImg)
 
                 //appends rating and gif to the gifDiv div
@@ -67,7 +67,7 @@ function makeBtns() {
     //generates button for each item in array
     for (var i = 0; i < lotr.length; i++) {
         var b = $("<button>")
-            .addClass("lotr")
+            .addClass("lotr-btn")
             .attr("data-name", lotr[i])
             .text(lotr[i]);
         //adds buttons to btn-sectin div
@@ -86,6 +86,6 @@ $("#name-add").on("click", function (event) {
     makeBtns();
 })
 
-$(document).on("click", ".lotr", produceGifs);
+$(document).on("click", ".lotr-btn", produceGifs);
 
 makeBtns();

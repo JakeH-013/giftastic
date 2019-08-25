@@ -1,3 +1,25 @@
-.container {
+body {
     background-image: url(../images/background-img.jpg);
+}
+
+button,
+div,
+form,
+input {
+  margin: 10px;
+}
+
+p {
+    background-color: olivedrab;
+    width: 80px;
+    text-align: center;
+    padding: 3px;
+    margin-top: 50px;
+}
+
+#name-form {
+    background-color: olivedrab;
+    padding: 5px;
+    width: 200px;
+    text-align: center;
 }
