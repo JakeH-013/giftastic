@@ -1,9 +1,9 @@
 # Giftastic
-***
+
 Application using the GIPHY API to populate the webpage with gifs.
 
 Link: https://jakeh-013.github.io/giftastic/
-***
+
 ## Instructions
 
 1) Click on one of the named buttons at the top of the screen.
@@ -15,7 +15,7 @@ Link: https://jakeh-013.github.io/giftastic/
 4) Your new button should appear and be ready for your enjoyment
 
 ### Installing
-***
+
 To run the application locally, you have to clone the repository to your local machine:
 
 HTTPS:
@@ -28,6 +28,6 @@ SSH:
 git@github.com:JakeH-013/giftastic.git
 ```
 
-Technologies used
-***
+## Technologies used
+
 Javascript, JQuery, AJAX, CSS
