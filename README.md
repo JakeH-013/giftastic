@@ -1,12 +1,10 @@
-Giftastic
+# Giftastic
+***
+Application using the GIPHY API to populate the webpage with gifs.
 
 Link: https://jakeh-013.github.io/giftastic/
-
-
-My assignment for practicing API calls with the GIPHY API. I chose a Lord of the Rings theme due to my love of the books, films, and overall setting. 
-
-
-Instructions:
+***
+## Instructions
 
 1) Click on one of the named buttons at the top of the screen.
 
@@ -16,11 +14,20 @@ Instructions:
 
 4) Your new button should appear and be ready for your enjoyment
 
+### Installing
+***
+To run the application locally, you have to clone the repository to your local machine:
 
-Behind the scenes:
+HTTPS:
+```
+https://github.com/JakeH-013/giftastic.git
+```
 
-Starting with a base array of names, each item within the array is given a button, via a fucntion utilizing a for loop to generate one for each item in the array. Each button is given a class, data-name, and text. The buttons are then appended into the button section. 
+SSH:
+```
+git@github.com:JakeH-013/giftastic.git
+```
 
-The gifs are produced in another function, triggerd by the clicking of a gif button. This function pulls the names that giphy will search for by using the button's data-name, which is simply what it is listed as within the array. The function performs an ajax call to retrieve a number of gifs related to the data-name, which serves as the search term(s). It will then disply the gifs and text stating the gifs' ratings. 
-
-Clicking on each gif will trigger a funtion swapping the image's source from the still image to an animated image, and the reverse on another click.
+Technologies used
+***
+Javascript, JQuery, AJAX, CSS
